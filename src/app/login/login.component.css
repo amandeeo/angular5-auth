@@ -1,0 +1,172 @@
+form{
+	width: 100%;
+	display: block;
+    margin-top: 0em;
+}
+.wrapper{
+    height: 100vh;
+    text-align: center;
+}
+
+.alert {
+    margin-bottom: 0;
+    padding: 5px;
+}
+.title{
+	margin-bottom: .75rem;
+    text-align: center;
+	font-family: 'Lobster Two', cursive;
+    margin-top: 0;
+}
+.sub-title{
+	margin-bottom: 2rem;
+    text-align: center;
+}
+.form-text {
+    display: block;
+    margin-top: .25rem;
+    color: #a4abb3;
+	font-family: 'Roboto', sans-serif;
+}
+small{
+
+	font-weight: 400;
+	font-size: 87.5%;
+    color: #a4abb3;
+    font-family: 'Roboto', sans-serif;
+
+}
+.form-control{
+	padding: 23px 29px;
+    color: #2a2a2a;
+    background-color: #fff;
+    border: 2px solid #dadfe6;
+    font-family: Roboto;
+    border-radius: .375rem;
+    font-size: 2rem;
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.login_form_section{
+	margin:0 auto;
+	width:500px;
+}
+.btn{
+	background-image: linear-gradient(to right,#40dcb2,#40dc7e) !important;
+	text-shadow: none;
+    border: none;
+    line-height: 1.5px;
+    color: #fff;
+}
+a.forgot_password {
+	color: #a4abb3;
+	text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: Roboto;
+    float:right;
+}
+.form-group{
+    margin-left:0px;
+    margin-right:0px;
+    text-align: left;
+}
+.signup_form_section{
+    margin:0 auto;
+    max-width:500px;
+}
+
+a.switch_form{
+    color: #a4abb3;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: Roboto;
+    text-align:center;
+
+}
+small.switch_text{
+    color: #a4abb3;
+    font-size: 18px;
+    font-family: Roboto;
+    text-align:center;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+/*checkbox*/
+.remember_me {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* Hide the browser's default checkbox */
+.remember_me input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+   /* background-color: #eee;*/
+    border: 1px solid #000;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/* Show the checkmark when checked */
+.remember_me input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.remember_me .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* When the checkbox is checked, add a blue background */
+.remember_me input:checked ~ .checkmark {
+    background-color: transparent;
+}
+@media only screen and (max-width: 767px) {
+    form {
+            padding: 0 15px;
+    }
+}
