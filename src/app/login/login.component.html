@@ -1,5 +1,8 @@
 <div class="wrapper">
 
+	<!--Spinner-->
+	<ngx-spinner></ngx-spinner>
+
 	<!--Login Form Content-->
 
 	<div class="login_wrapper" *ngIf=!disableLogin>
@@ -49,7 +52,7 @@
 		<h2 class="text-center title">SignUp</h2>
 		<div class="signup_form_section">
 			<form class="form-horizontal"
-			#signupForm ="ngForm" (ngSubmit)="signingUp();signupForm.reset()" ngNativeValidate>
+			#signupForm ="ngForm" (ngSubmit)="signingUp()" ngNativeValidate>
 				<div class="form-group">
 					<input type="text" name="name" class="form-control" placeholder="Name" [(ngModel)]="credentials.name" required #name="ngModel">
 					{{name.className}} 

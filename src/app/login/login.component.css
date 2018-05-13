@@ -165,6 +165,11 @@ small.switch_text{
 .remember_me input:checked ~ .checkmark {
     background-color: transparent;
 }
+@media only screen and (max-width:436px){
+    .login_form_section{
+        width: 410px;
+    }
+}
 @media only screen and (max-width: 767px) {
     form {
             padding: 0 15px;

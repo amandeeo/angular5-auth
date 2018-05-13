@@ -3,6 +3,7 @@ import { AuthenticationService, TokenPayload} from '../authentication.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import * as CryptoJS from 'crypto-js';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
   public isRemembered : boolean = false;
 
 
-  constructor(public auth:AuthenticationService,public router:Router,private cookieService: CookieService) { }
+  constructor(private spinner: NgxSpinnerService,public auth:AuthenticationService,public router:Router,private cookieService: CookieService) { }
 
   ngOnInit() {
       this.token = localStorage.getItem('auth-token');
@@ -58,9 +59,16 @@ export class LoginComponent implements OnInit {
    
     if(this.credentials.password != this.credentials.confirm_password){
        Swal('Error!', 'Password and confirm password must be same', 'error');
+       this.credentials.password = '';
+       this.credentials.confirm_password = '';
     }
 
     else{
+      this.spinner.show();
+      setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+      }, 5000);
       this.auth.register(this.credentials).subscribe(() => {
          Swal('Congratulations', 'Registeration successful', 'success');
         this.disableLogin = false;
