@@ -65,16 +65,14 @@ export class LoginComponent implements OnInit {
 
     else{
       this.spinner.show();
-      setTimeout(() => {
-        /** spinner ends after 5 seconds */
-        this.spinner.hide();
-      }, 5000);
       this.auth.register(this.credentials).subscribe(() => {
          Swal('Congratulations', 'Registeration successful', 'success');
         this.disableLogin = false;
+        this.spinner.hide();
       },(err) => {
         this.errorMessage = err.error.error;
         Swal('Error!', this.errorMessage, 'error');
+        this.spinner.hide();
       });
      }
   }
@@ -82,6 +80,7 @@ export class LoginComponent implements OnInit {
 //function to execute at time of login
 
   loggingIn(){
+    this.spinner.show();
 
     this.auth.login(this.credentials).subscribe((data : any)=> {
        this.auth.saveToken(data.token);
@@ -97,10 +96,12 @@ export class LoginComponent implements OnInit {
       this.credentials.email = '';
       this.credentials.password = '';
        this.router.navigate(['/home']);
+       this.spinner.hide();
     },
     (err) => {
       this.errorMessage = err.error.error;
       Swal('Error!', this.errorMessage, 'error');
+      this.spinner.hide();
     })
   }
 

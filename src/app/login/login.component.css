@@ -56,7 +56,8 @@ small{
 }
 .login_form_section{
 	margin:0 auto;
-	width:500px;
+	max-width:500px;
+    padding: 20px
 }
 .btn{
 	background-image: linear-gradient(to right,#40dcb2,#40dc7e) !important;
@@ -83,6 +84,7 @@ a.forgot_password {
 .signup_form_section{
     margin:0 auto;
     max-width:500px;
+    padding: 20px;
 }
 
 a.switch_form{
@@ -165,13 +167,8 @@ small.switch_text{
 .remember_me input:checked ~ .checkmark {
     background-color: transparent;
 }
-@media only screen and (max-width:436px){
-    .login_form_section{
-        width: 410px;
-    }
-}
-@media only screen and (max-width: 767px) {
+/*@media only screen and (max-width: 767px) {
     form {
             padding: 0 15px;
     }
-}
+}*/
