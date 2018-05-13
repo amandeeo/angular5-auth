@@ -86,13 +86,13 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<input type="password" name="password" class="form-control" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" [(ngModel)] ="credentials.password" #password="ngModel" required>
+					<input type="password" name="password" class="form-control" placeholder="Password" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$" [(ngModel)] ="credentials.password" #password="ngModel" required>
 					<div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
 						<div *ngIf="password.errors?.required">
 							Password is required
 						</div>
 						<div *ngIf="password.errors?.pattern">
-							Please enter a strong password of minimum 8 characters containing combination of alphabets and numbers without any special character 
+							Please enter a strong password of minimum 6 characters containing combination of alphabets, numbers and special character 
 						</div>
 					</div>
 				</div>
