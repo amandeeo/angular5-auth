@@ -4,115 +4,117 @@
 	<ngx-spinner></ngx-spinner>
 
 	<!--Login Form Content-->
-
-	<div class="login_wrapper" *ngIf=!disableLogin>
-		<h2 class="text-center title">SignIn</h2>
-		<small class="form-text sub-title">Hello!SignIn with your email</small>
-		<div class="login_form_section">
-			<form class="form-horizontal" autocomplete="nope"
-			#signInForm = "ngForm" (ngSubmit)="loggingIn()" ngNativeValidate>
-				<div class="form-group">
-					<input type="email" name="email" class="form-control" [(ngModel)] = "credentials.email" placeholder="Email address" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  #email="ngModel" required>
-					<div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-						<div *ngIf="email.errors?.required">
-							Email is required
-						</div>
-						<div *ngIf="email.errors?.pattern">
-							Please enter a valid Email
+	<div class="login_section" *ngIf=!disableLogin>
+		<div class="login_wrapper" >
+			<h2 class="text-center title">SignIn</h2>
+			<small class="form-text sub-title">Hello!SignIn with your email</small>
+			<div class="login_form_section">
+				<form class="form-horizontal" autocomplete="nope"
+				#signInForm = "ngForm" (ngSubmit)="loggingIn()" ngNativeValidate>
+					<div class="form-group">
+						<input type="email" name="email" class="form-control" [(ngModel)] = "credentials.email" placeholder="Email address" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  #email="ngModel" required>
+						<div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+							<div *ngIf="email.errors?.required">
+								Email is required
+							</div>
+							<div *ngIf="email.errors?.pattern">
+								Please enter a valid Email
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="credentials.password"  #password="ngModel" required>
-					<div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-						Password is required.
+					<div class="form-group">
+						<input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="credentials.password"  #password="ngModel" required>
+						<div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+							Password is required.
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="remember_me">Remember Me
-  						<input type="checkbox" name="isRemembered"  [(ngModel)]="isRemembered" (change)="toggleEditable($event)">
-  						<span class="checkmark"></span>
-					</label>
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn form-control" >Login</button>
-				</div>
-				<div class="form-group">
-					<small class="switch_text">Doesn't have an account?
-					<a  class="switch_form" (click)="switchForm()">SignUp</a></small>
-				</div>
-			</form>
+					<div class="form-group">
+						<label class="remember_me">Remember Me
+	  						<input type="checkbox" name="isRemembered"  [(ngModel)]="isRemembered" (change)="toggleEditable($event)">
+	  						<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn form-control" >Login</button>
+					</div>
+					<div class="form-group">
+						<small class="switch_text">Doesn't have an account?
+						<a  class="switch_form" (click)="switchForm()">SignUp</a></small>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 	<!--End of Login Area -->
 
 	<!--SignUp Form Content -->
+	<div class="signup_section"  *ngIf="disableLogin">
+		<div class="signup_wrapper">
+			<h2 class="text-center title">SignUp</h2>
+			<div class="signup_form_section">
+				<form class="form-horizontal"
+				#signupForm ="ngForm" (ngSubmit)="signingUp()" ngNativeValidate>
+					<div class="form-group">
+						<input type="text" name="name" class="form-control" placeholder="Name" [(ngModel)]="credentials.name" required #name="ngModel">
+						{{name.className}} 
+						<div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+							<div *ngIf="name.errors?.required">
+								Name is required.
+							</div>
+							<div *ngIf="name.errors?.pattern">
+								Please enter a valid name
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="email" name="email" class="form-control" placeholder="Email address" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]="credentials.email"  #email="ngModel" required>
+						<div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+							<div *ngIf="email.errors?.required">
+								Email is required.
+							</div>
+							<div *ngIf="email.errors?.pattern">
+								Please enter a valid email
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="text" name="age" class="form-control" pattern="[0-9]*"  maxlength="2" placeholder="Your Age" [(ngModel)]="credentials.age" #age="ngModel" title="Enter valid age" required>
 
-	<div class="signup_wrapper" *ngIf="disableLogin">
-		<h2 class="text-center title">SignUp</h2>
-		<div class="signup_form_section">
-			<form class="form-horizontal"
-			#signupForm ="ngForm" (ngSubmit)="signingUp()" ngNativeValidate>
-				<div class="form-group">
-					<input type="text" name="name" class="form-control" placeholder="Name" [(ngModel)]="credentials.name" required #name="ngModel">
-					{{name.className}} 
-					<div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-						<div *ngIf="name.errors?.required">
-							Name is required.
-						</div>
-						<div *ngIf="name.errors?.pattern">
-							Please enter a valid name
+						<div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+							<div *ngIf="age.errors?.required">
+								Age is required
+							</div>
+							<div *ngIf="age.errors?.pattern">
+								Enter a valid age
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<input type="email" name="email" class="form-control" placeholder="Email address" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]="credentials.email"  #email="ngModel" required>
-					<div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-						<div *ngIf="email.errors?.required">
-							Email is required.
-						</div>
-						<div *ngIf="email.errors?.pattern">
-							Please enter a valid email
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<input type="text" name="age" class="form-control" pattern="[0-9]*"  maxlength="2" placeholder="Your Age" [(ngModel)]="credentials.age" #age="ngModel" title="Enter valid age" required>
-
-					<div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
-						<div *ngIf="age.errors?.required">
-							Age is required
-						</div>
-						<div *ngIf="age.errors?.pattern">
-							Enter a valid age
+					<div class="form-group">
+						<input type="password" name="password" class="form-control" placeholder="Password" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$" [(ngModel)] ="credentials.password" #password="ngModel" required>
+						<div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+							<div *ngIf="password.errors?.required">
+								Password is required
+							</div>
+							<div *ngIf="password.errors?.pattern">
+								Please enter a strong password of minimum 6 characters containing combination of alphabets, numbers and special character 
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<input type="password" name="password" class="form-control" placeholder="Password" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$" [(ngModel)] ="credentials.password" #password="ngModel" required>
-					<div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-						<div *ngIf="password.errors?.required">
-							Password is required
-						</div>
-						<div *ngIf="password.errors?.pattern">
-							Please enter a strong password of minimum 6 characters containing combination of alphabets, numbers and special character 
+					<div class="form-group">
+						<input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password"  [(ngModel)]="credentials.confirm_password" required #confirm_password="ngModel">
+						<div *ngIf="confirm_password.invalid && (confirm_password.dirty || confirm_password.touched)" class="alert alert-danger">
+							 Confirm Password is required.
 						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password"  [(ngModel)]="credentials.confirm_password" required #confirm_password="ngModel">
-					<div *ngIf="confirm_password.invalid && (confirm_password.dirty || confirm_password.touched)" class="alert alert-danger">
-						 Confirm Password is required.
+					<div class="form-group">
+						<button type="submit" class="btn form-control">Register</button>
 					</div>
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn form-control">Register</button>
-				</div>
-				<div class="form-group">
-					<small class="switch_text">Already have an account?
-					<a  class="switch_form"  (click)="switchForm()" >SignIn</a></small>
-				</div>
-			</form>
+					<div class="form-group">
+						<small class="switch_text">Already have an account?
+						<a  class="switch_form"  (click)="switchForm()" >SignIn</a></small>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 

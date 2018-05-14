@@ -7,6 +7,38 @@ form{
     height: 100vh;
     text-align: center;
 }
+.login_section{
+    height: 100vh;
+    position: relative;
+    width: 100%;
+}
+.signup_section{
+    height: 100vh;
+    position: relative;
+    width: 100%;
+}
+.login_wrapper{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    left: 0;
+    margin: 10px auto;
+    padding: 84px 30px;
+    box-shadow: 1px 1px 20px 2px #d2caca;
+    max-width: 770px;
+}
+.signup_wrapper{
+   position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    left: 0;
+    margin: 10px auto;
+    padding: 84px 30px;
+    box-shadow: 1px 1px 20px 2px #d2caca;
+    max-width: 770px; 
+}
 
 .alert {
     margin-bottom: 0;
@@ -103,6 +135,7 @@ small.switch_text{
     font-size: 18px;
     font-family: Roboto;
     text-align:center;
+    display: block;
 }
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */
@@ -111,6 +144,7 @@ small.switch_text{
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
+
 /*checkbox*/
 .remember_me {
     display: block;
@@ -123,6 +157,13 @@ small.switch_text{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    color: #a4abb3;
+    font-size: 18px;
+    font-family: Roboto;
+
+}
+label.remember_me {
+    margin-bottom:0;
 }
 /* Hide the browser's default checkbox */
 .remember_me input {
@@ -135,10 +176,10 @@ small.switch_text{
     position: absolute;
     top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
    /* background-color: #eee;*/
-    border: 1px solid #000;
+    border: 1px solid #aab1b8;
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
@@ -167,8 +208,105 @@ small.switch_text{
 .remember_me input:checked ~ .checkmark {
     background-color: transparent;
 }
-/*@media only screen and (max-width: 767px) {
-    form {
-            padding: 0 15px;
+/*@media screen and (min-width: 1200px) {
+
+    
+    .login_wrapper[_ngcontent-c1] {
+    border: 1px solid #cccccc6e;
+    padding: 84px 30px;
+    transform: translateY(27%);
+    box-shadow: 1px 1px 20px 2px #d2caca;
+    max-width: 770px;
+    margin: 0 auto;
+}
+}
+@media screen and (max-width: 1024px) {
+
+    
+    .login_wrapper {
+    border: 1px solid #cccccc6e;
+    padding: 84px 30px;
+    transform: translateY(50%);
+    transform: translateY;
+    box-shadow: 1px 1px 20px 2px #d2caca;
+
+}
+}
+@media screen and (max-width: 768px) {
+
+    
+    .login_wrapper {
+    border: 1px solid #cccccc6e;
+    padding: 84px 30px;
+    transform: translateY(33%);
+    transform: translateY;
+    box-shadow: 1px 1px 20px 2px #d2caca;
+}
+}
+@media screen and (max-width: 414px) {
+
+    .login_section {
+        float: left;
+        height: auto;
     }
+    .login_wrapper {
+    border: 1px solid #cccccc6e;
+    max-width: 770px;
+    padding: 84px 30px;
+    transform: translateY(11%);
+    transform: translateY;
+}
+}
+@media screen and (max-width: 375px) {
+
+    .login_section {
+        float: left;
+        height: auto;
+    }
+    .login_wrapper {
+    border: 1px solid #cccccc6e;
+    max-width: 770px;
+    padding: 20px 30px;
+    transform: translateY(20%);
+    transform: translateY;
+}
+}
+@media screen and (max-width: 360px) {
+
+    .login_section {
+        float: left;
+        height: auto;
+    }
+    .login_wrapper {
+    border: 1px solid #cccccc6e;
+    max-width: 770px;
+    padding: 20px 30px;
+    transform: translateY(11%);
+    transform: translateY;
+    
+}
 }*/
+@media screen and (min-width: 320px) and (max-width: 992px) and  (orientation: landscape) {
+    .login_wrapper {
+        position: static;
+        transform: inherit;
+        margin: 30px 0;
+    }
+    .signup_wrapper {
+        position: static;
+        transform: inherit;
+        margin: 30px 0;
+    }
+}
+@media screen and (max-width: 320px) {
+    .login_wrapper {
+        position: static;
+        transform: inherit;
+        margin: 30px 0;
+    }
+    .signup_wrapper{
+        position: static;
+        transform: inherit;
+        margin: 30px 0;
+    }
+}
