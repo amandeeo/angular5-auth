@@ -178,7 +178,6 @@ label.remember_me {
     left: 0;
     height: 20px;
     width: 20px;
-   /* background-color: #eee;*/
     border: 1px solid #aab1b8;
 }
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -194,8 +193,8 @@ label.remember_me {
 
 /* Style the checkmark/indicator */
 .remember_me .checkmark:after {
-    left: 9px;
-    top: 5px;
+    left: 7px;
+    top: 3px;
     width: 5px;
     height: 10px;
     border: solid #000;
@@ -208,84 +207,7 @@ label.remember_me {
 .remember_me input:checked ~ .checkmark {
     background-color: transparent;
 }
-/*@media screen and (min-width: 1200px) {
 
-    
-    .login_wrapper[_ngcontent-c1] {
-    border: 1px solid #cccccc6e;
-    padding: 84px 30px;
-    transform: translateY(27%);
-    box-shadow: 1px 1px 20px 2px #d2caca;
-    max-width: 770px;
-    margin: 0 auto;
-}
-}
-@media screen and (max-width: 1024px) {
-
-    
-    .login_wrapper {
-    border: 1px solid #cccccc6e;
-    padding: 84px 30px;
-    transform: translateY(50%);
-    transform: translateY;
-    box-shadow: 1px 1px 20px 2px #d2caca;
-
-}
-}
-@media screen and (max-width: 768px) {
-
-    
-    .login_wrapper {
-    border: 1px solid #cccccc6e;
-    padding: 84px 30px;
-    transform: translateY(33%);
-    transform: translateY;
-    box-shadow: 1px 1px 20px 2px #d2caca;
-}
-}
-@media screen and (max-width: 414px) {
-
-    .login_section {
-        float: left;
-        height: auto;
-    }
-    .login_wrapper {
-    border: 1px solid #cccccc6e;
-    max-width: 770px;
-    padding: 84px 30px;
-    transform: translateY(11%);
-    transform: translateY;
-}
-}
-@media screen and (max-width: 375px) {
-
-    .login_section {
-        float: left;
-        height: auto;
-    }
-    .login_wrapper {
-    border: 1px solid #cccccc6e;
-    max-width: 770px;
-    padding: 20px 30px;
-    transform: translateY(20%);
-    transform: translateY;
-}
-}
-@media screen and (max-width: 360px) {
-
-    .login_section {
-        float: left;
-        height: auto;
-    }
-    .login_wrapper {
-    border: 1px solid #cccccc6e;
-    max-width: 770px;
-    padding: 20px 30px;
-    transform: translateY(11%);
-    transform: translateY;
-    
-}
-}*/
 @media screen and (min-width: 320px) and (max-width: 992px) and  (orientation: landscape) {
     .login_wrapper {
         position: static;
