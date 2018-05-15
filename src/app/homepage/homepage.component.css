@@ -2,6 +2,9 @@
 .detail-heading{
     color:#FFFFFF;
 }
+ .detail-heading h3 {
+    line-height:4;
+}
 
 #actionbutton
 {
