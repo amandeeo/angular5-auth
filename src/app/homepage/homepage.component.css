@@ -201,7 +201,8 @@
     padding-top: 0;
     overflow: hidden;
     text-align: center;
-    background-color: rgba(214, 224, 226, 0.2);
+    /*background-color: rgba(214, 224, 226, 0.2);*/
+    background-color:transparent;
 }
 
 .card.hovercard .cardheader {
@@ -255,6 +256,55 @@
 .heading{
     text-align: center;
     font-family:'Times New Roman', Times, serif;
+    
+    
+}
+div.showcase {
+    position: absolute;
+    top: 52%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    margin: 10px auto;
+    padding: 14px 30px;
+    -webkit-box-shadow: 1px 1px 20px 2px #d2caca;
+    box-shadow: 1px 1px 20px 2px #d2caca;
+    max-width: 770px;
+    background-color: #f8f8f8;
+}
+@media screen and (min-width: 320px) and (max-width: 992px) {
+    .showcase {
+        position: static;
+        transform: inherit;
+        margin: 30px 0;
+        top:80%;
+    }
+    
+}
+@media screen and (min-width: 320px) and (max-width: 992px) and  (orientation: landscape) {
+    .showcase {
+        position: static;
+        transform: inherit;
+        margin: 30px 0;
+    }
+    .card.hovercard{
+        padding-top: 177px;
+    }
+    
+}
+@media screen and (max-width: 360px) {
+    .card.hovercard {
+    padding-top: 0px;
+    
+}
+}
+@media screen and (max-width: 320px) {
+    .showcase {
+        position: static;
+        transform: inherit;
+        margin: 30px 0;
+    }
     
     
 }
