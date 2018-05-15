@@ -149,7 +149,7 @@ small.switch_text{
 .remember_me {
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding-left: 23px;
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 22px;
@@ -160,6 +160,8 @@ small.switch_text{
     color: #a4abb3;
     font-size: 18px;
     font-family: Roboto;
+    line-height: 1;
+    font-weight:400;
 
 }
 label.remember_me {
@@ -176,8 +178,8 @@ label.remember_me {
     position: absolute;
     top: 0;
     left: 0;
-    height: 20px;
-    width: 20px;
+    height: 16px;
+    width: 16px;
     border: 1px solid #aab1b8;
 }
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -193,8 +195,8 @@ label.remember_me {
 
 /* Style the checkmark/indicator */
 .remember_me .checkmark:after {
-    left: 7px;
-    top: 3px;
+    left: 4px;
+    top: 1px;
     width: 5px;
     height: 10px;
     border: solid #000;
